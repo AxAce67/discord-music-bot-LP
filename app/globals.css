@@ -390,22 +390,23 @@ button {
   margin-bottom: 48px;
 }
 
-.invite-notes {
-  width: min(640px, 100%);
+.invite-note {
   margin: -20px auto 0;
-  padding: 14px 16px;
-  border: 1px solid color-mix(in srgb, var(--black) 8%, transparent);
-  border-radius: 16px;
-  background: color-mix(in srgb, var(--off-white) 88%, var(--white) 12%);
   color: var(--gray-500);
-  font-size: .82rem;
+  font-size: .8rem;
   line-height: 1.7;
-  text-align: left;
+  text-align: center;
   text-wrap: pretty;
 }
 
-.invite-notes p + p {
-  margin-top: 6px;
+.commands-note {
+  margin: 18px auto 0;
+  max-width: 860px;
+  color: var(--gray-500);
+  font-size: .82rem;
+  line-height: 1.7;
+  text-align: center;
+  text-wrap: pretty;
 }
 
 .btn-pill {
@@ -705,8 +706,8 @@ button {
   flex-wrap: wrap;
 }
 
-.cta-notes {
-  margin: 20px auto 0;
+.cta-note {
+  margin: 18px auto 0;
 }
 
 .cta-ghost {
@@ -1062,9 +1063,13 @@ button {
     align-items: center;
   }
 
-  .invite-notes {
+  .invite-note {
     margin-top: -8px;
-    padding: 12px 14px;
+    font-size: .8rem;
+  }
+
+  .commands-note {
+    margin-top: 16px;
     font-size: .8rem;
   }
 
