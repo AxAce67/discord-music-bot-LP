@@ -61,7 +61,7 @@ const copy = {
       { name: "/lang {ja|en}", desc: "言語を切り替え（日/英）" }
     ],
     faqHeading: "よくある質問",
-    faqLead: "サイトだけでは分かりにくい点を、先にまとめています。",
+    faqLead: "",
     faqs: [
       {
         q: "Kanade は今すぐ使えますか？",
@@ -148,7 +148,7 @@ const copy = {
       { name: "/lang {ja|en}", desc: "Switch language" }
     ],
     faqHeading: "FAQ",
-    faqLead: "Answers to the questions that are hardest to infer from the landing page alone.",
+    faqLead: "",
     faqs: [
       {
         q: "Can I use Kanade right away?",
