@@ -13,6 +13,7 @@ const copy = {
     navFeatures: "機能",
     navHow: "使い方",
     navCommands: "コマンド",
+    navFaq: "FAQ",
     navAdd: "利用申請",
     heroTitleA: "ボイスチャットで",
     heroTitleB: "好きな音楽を流そう",
@@ -59,6 +60,34 @@ const copy = {
       { name: "/leave", desc: "ボイスチャンネルから退出" },
       { name: "/lang {ja|en}", desc: "言語を切り替え（日/英）" }
     ],
+    faqHeading: "よくある質問",
+    faqLead: "サイトだけでは分かりにくい点を、先にまとめています。",
+    faqs: [
+      {
+        q: "Kanade は今すぐ使えますか？",
+        a: "現在は安定運用のため段階的に受付しています。利用申請の内容を確認し、案内可能なサーバーから順次ご連絡しています。"
+      },
+      {
+        q: "利用申請すると何が起きますか？",
+        a: "フォーム送信後、受付順と空き状況を確認し、利用可能な場合のみ招待手順をご案内します。"
+      },
+      {
+        q: "どのサービスに対応していますか？",
+        a: "現在は YouTube の曲名検索、URL再生、通常プレイリスト再生に対応しています。Spotify の直接再生には対応していません。"
+      },
+      {
+        q: "通常の YouTube プレイリストは使えますか？",
+        a: "はい。通常の YouTube プレイリスト URL を貼ると、まとめてキューに追加して再生できます。"
+      },
+      {
+        q: "YouTube Mix / Radio はブラウザ通りに再生されますか？",
+        a: "Mix / Radio は動的プレイリストのため、ブラウザで表示される曲順や内容と完全一致しない場合があります。"
+      },
+      {
+        q: "日本語以外でも使えますか？",
+        a: "はい。日本語と英語の表示に対応していて、サーバーごとに表示言語を切り替えられます。"
+      }
+    ],
     ctaHeading: "あなたのサーバーに、\n音楽を。",
     ctaBody: "利用可能なサーバーから順次案内しています。導入後は曲名検索も URL 直接再生も Discord の中で完結します。",
     ctaPrimary: "利用申請する",
@@ -71,6 +100,7 @@ const copy = {
     navFeatures: "Features",
     navHow: "How it works",
     navCommands: "Commands",
+    navFaq: "FAQ",
     navAdd: "Apply for Access",
     heroTitleA: "Play music",
     heroTitleB: "inside voice chat",
@@ -116,6 +146,34 @@ const copy = {
       { name: "/join", desc: "Join a voice channel" },
       { name: "/leave", desc: "Leave the voice channel" },
       { name: "/lang {ja|en}", desc: "Switch language" }
+    ],
+    faqHeading: "FAQ",
+    faqLead: "Answers to the questions that are hardest to infer from the landing page alone.",
+    faqs: [
+      {
+        q: "Can I use Kanade right away?",
+        a: "Access is currently rolling out in stages. We review each application and contact servers we can support as capacity becomes available."
+      },
+      {
+        q: "What happens after I apply?",
+        a: "After you submit the form, we review requests in order and send invite guidance only when a slot is available."
+      },
+      {
+        q: "What services does Kanade support?",
+        a: "Kanade currently focuses on YouTube title search, direct URL playback, and regular playlist playback. Direct Spotify playback is not supported."
+      },
+      {
+        q: "Can it play normal YouTube playlists?",
+        a: "Yes. Paste a regular YouTube playlist URL and Kanade can add the list to the queue for playback."
+      },
+      {
+        q: "Will YouTube Mix / Radio match the browser exactly?",
+        a: "Not always. Mix / Radio is dynamic, so track order and contents may differ from what you see in the browser."
+      },
+      {
+        q: "Can I use it in English too?",
+        a: "Yes. Kanade supports both Japanese and English, and the display language can be changed per server."
+      }
     ],
     ctaHeading: "Bring music\nto your server.",
     ctaBody: "Servers are invited in order as capacity opens up. Once approved, title search and direct URL playback stay entirely inside Discord.",
@@ -205,6 +263,18 @@ export default function Home() {
   }, [locale]);
 
   const t = copy[locale];
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
   const nextTheme = theme === "light" ? "dark" : "light";
   const jsonLd = {
     "@context": "https://schema.org",
@@ -280,6 +350,7 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className={isScrolled ? "nav-wrap is-scrolled" : "nav-wrap"}>
         <nav className="nav container">
           <div className="nav-left">
@@ -291,6 +362,7 @@ export default function Home() {
               <a href="#features">{t.navFeatures}</a>
               <a href="#how">{t.navHow}</a>
               <a href="#commands">{t.navCommands}</a>
+              <a href="#faq">{t.navFaq}</a>
             </div>
           </div>
           <div className="nav-right">
@@ -483,6 +555,25 @@ export default function Home() {
             ))}
           </div>
           <p className="commands-note" data-reveal>{t.commandsMixNote}</p>
+        </section>
+
+        <section className="sec" id="faq">
+          <div className="sec-head" data-reveal>
+            <h2>{t.faqHeading}</h2>
+            <p>{t.faqLead}</p>
+          </div>
+
+          <div className="faq-list">
+            {t.faqs.map((faq, index) => (
+              <details className="faq-item" key={faq.q} data-reveal>
+                <summary className="faq-question">
+                  <span>{faq.q}</span>
+                  <span className="faq-marker" aria-hidden="true">{index + 1}</span>
+                </summary>
+                <p className="faq-answer">{faq.a}</p>
+              </details>
+            ))}
+          </div>
         </section>
 
         <section className="cta">
