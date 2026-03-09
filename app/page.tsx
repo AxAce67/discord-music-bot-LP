@@ -13,13 +13,13 @@ const copy = {
     navFeatures: "機能",
     navHow: "使い方",
     navCommands: "コマンド",
-    navAdd: "サーバーに追加",
+    navAdd: "利用申請",
     heroTitleA: "ボイスチャットで",
     heroTitleB: "好きな音楽を流そう",
     heroReleaseKicker: "2026年3月公開",
     heroReleaseText: "Discord Music Bot Kanade",
-    heroSub: "プレイリスト、キュー UI、多言語表示に対応。Kanade を追加して、曲名を入力するだけで再生が始まります。",
-    heroPrimary: "サーバーに追加する",
+    heroSub: "プレイリスト、キュー UI、多言語表示に対応。現在は段階的に受付中で、利用可能なサーバーから順次ご案内しています。",
+    heroPrimary: "利用申請する",
     heroSecondary: "使い方を見る",
     inviteNoteCapacity: "※ 利用できるサーバー数には上限があります。招待枠は先着順です。",
     commandsMixNote:
@@ -39,13 +39,13 @@ const copy = {
     featureB3Title: "日本語 & 英語対応",
     featureB3Body: "Bot の表示言語をサーバーごとに切り替え。日本語でも英語でもストレスなく使えます。",
     howHeading: "3ステップではじめる",
-    howLead: "むずかしい設定は一切不要。/play でも !play でもすぐに使い始められます。",
-    step1Title: "Bot をサーバーに招待",
-    step1Body: "「サーバーに追加する」ボタンを押して、あなたの Discord サーバーに Kanade を招待。",
-    step2Title: "ボイスチャンネルに参加",
-    step2Body: "音楽を聴きたいボイスチャンネルに入って、Bot を呼び出します。",
-    step3Title: "/play または !play で再生",
-    step3Body: "テキストチャンネルで /play 曲名 や !play URL を入力するだけ。再生スタート！",
+    howLead: "申請後、案内されたサーバーから順に利用できます。導入後は /play でも !play でもすぐ使えます。",
+    step1Title: "利用申請を送る",
+    step1Body: "「利用申請する」ボタンからフォームを送信してください。",
+    step2Title: "案内を受け取る",
+    step2Body: "受付順と空き状況を確認し、利用可能な場合のみ順次ご連絡します。",
+    step3Title: "招待後に再生開始",
+    step3Body: "案内後に Kanade を導入し、/play 曲名 や !play URL で再生を始められます。",
     commandsHeading: "主なコマンド",
     commandsLead: "スラッシュコマンドと ! コマンドの両方に対応。/play と !play のどちらでも曲名検索や URL 直接再生ができます。",
     commands: [
@@ -60,8 +60,8 @@ const copy = {
       { name: "/lang {ja|en}", desc: "言語を切り替え（日/英）" }
     ],
     ctaHeading: "あなたのサーバーに、\n音楽を。",
-    ctaBody: "Kanade を追加すれば、曲名検索も URL 直接再生も、/ と ! の両方のコマンドで Discord の中で完結します。",
-    ctaPrimary: "サーバーに追加する",
+    ctaBody: "利用可能なサーバーから順次案内しています。導入後は曲名検索も URL 直接再生も Discord の中で完結します。",
+    ctaPrimary: "利用申請する",
     ctaSecondary: "コマンドを見る",
     footerLabel: "Discord Music Bot",
     themeLight: "Light",
@@ -71,13 +71,13 @@ const copy = {
     navFeatures: "Features",
     navHow: "How it works",
     navCommands: "Commands",
-    navAdd: "Add to Server",
+    navAdd: "Apply for Access",
     heroTitleA: "Play music",
     heroTitleB: "inside voice chat",
     heroReleaseKicker: "Launched in March 2026",
     heroReleaseText: "Discord Music Bot Kanade",
-    heroSub: "Includes playlists, queue UI, and multilingual display. Add Kanade, type a song name, and playback starts right inside your voice channel.",
-    heroPrimary: "Add to Server",
+    heroSub: "Includes playlists, queue UI, and multilingual display. Access is currently rolling out in stages, and available servers are invited in order.",
+    heroPrimary: "Apply for Access",
     heroSecondary: "View Guide",
     inviteNoteCapacity: "Note: Server capacity is limited. Invite slots are available on a first-come, first-served basis.",
     commandsMixNote:
@@ -97,13 +97,13 @@ const copy = {
     featureB3Title: "Japanese and English support",
     featureB3Body: "Switch the bot display language per server and keep the UI comfortable for everyone.",
     howHeading: "Start in three steps",
-    howLead: "No complex setup. You can start with either /play or !play right away.",
-    step1Title: "Invite the bot",
-    step1Body: "Press the add button and invite Kanade to your Discord server.",
-    step2Title: "Join a voice channel",
-    step2Body: "Enter the voice channel where you want to listen and call the bot.",
-    step3Title: "Play with /play or !play",
-    step3Body: "Type /play with a song title or !play with a direct URL and playback begins.",
+    howLead: "Send an application first, then start using Kanade as soon as your server is approved.",
+    step1Title: "Send an application",
+    step1Body: "Use the apply button to submit the access form for your server.",
+    step2Title: "Wait for approval",
+    step2Body: "Requests are reviewed in order, and eligible servers receive invite guidance when capacity is available.",
+    step3Title: "Start playback after invite",
+    step3Body: "Once approved, invite Kanade and start playback with /play or !play.",
     commandsHeading: "Main commands",
     commandsLead: "Supports both slash commands and ! commands. You can search by title or play directly from a URL with /play or !play.",
     commands: [
@@ -118,8 +118,8 @@ const copy = {
       { name: "/lang {ja|en}", desc: "Switch language" }
     ],
     ctaHeading: "Bring music\nto your server.",
-    ctaBody: "Kanade keeps title search, direct URL playback, and both slash and ! commands entirely inside Discord.",
-    ctaPrimary: "Add to Server",
+    ctaBody: "Servers are invited in order as capacity opens up. Once approved, title search and direct URL playback stay entirely inside Discord.",
+    ctaPrimary: "Apply for Access",
     ctaSecondary: "View Commands",
     footerLabel: "Discord Music Bot",
     themeLight: "Light",
@@ -128,7 +128,7 @@ const copy = {
 } as const;
 
 const inviteUrl =
-  "https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=36700160&scope=bot%20applications.commands";
+  "https://forms.gle/tAyDUooes22ba3MX9";
 
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("ja");
