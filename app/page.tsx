@@ -21,6 +21,9 @@ const copy = {
     heroSub: "プレイリスト、キュー UI、多言語表示に対応。Kanade を追加して、曲名を入力するだけで再生が始まります。",
     heroPrimary: "サーバーに追加する",
     heroSecondary: "使い方を見る",
+    inviteNoteMix:
+      "※ YouTube Mix / Radio は動的プレイリストのため、ブラウザ表示と曲順・内容が完全一致しない場合があります。",
+    inviteNoteCapacity: "※ 利用できるサーバー数には上限があります。招待枠は先着順です。",
     featureHeading: "みんなで聴ける、かんたん操作",
     featureLead: "ボイスチャンネルのみんなと一緒に、好きな曲を楽しめます。",
     featureA1Title: "ボイチャでそのまま再生",
@@ -76,6 +79,9 @@ const copy = {
     heroSub: "Includes playlists, queue UI, and multilingual display. Add Kanade, type a song name, and playback starts right inside your voice channel.",
     heroPrimary: "Add to Server",
     heroSecondary: "View Guide",
+    inviteNoteMix:
+      "Note: YouTube Mix / Radio is dynamic, so track order and contents may not exactly match what you see in the browser.",
+    inviteNoteCapacity: "Note: Server capacity is limited. Invite slots are available on a first-come, first-served basis.",
     featureHeading: "Simple control, shared listening",
     featureLead: "Enjoy music together with everyone in the voice channel.",
     featureA1Title: "Play directly in voice chat",
@@ -351,6 +357,11 @@ export default function Home() {
               {t.heroSecondary}
             </a>
           </div>
+
+          <div className="invite-notes reveal-delay-4" data-reveal>
+            <p>{t.inviteNoteMix}</p>
+            <p>{t.inviteNoteCapacity}</p>
+          </div>
         </section>
 
         <div className="hero-img-wrap reveal-delay-4" data-reveal>
@@ -495,6 +506,10 @@ export default function Home() {
               <a className="btn-pill btn-ghost cta-ghost" href="#commands">
                 {t.ctaSecondary}
               </a>
+            </div>
+            <div className="invite-notes cta-notes">
+              <p>{t.inviteNoteMix}</p>
+              <p>{t.inviteNoteCapacity}</p>
             </div>
           </div>
         </section>
