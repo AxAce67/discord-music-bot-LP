@@ -11,9 +11,9 @@ const normalizedSiteUrl = rawSiteUrl
 
 export const siteConfig = {
   name: "Kanade",
-  title: "Kanade — Discord Music Bot",
+  title: "Kanade | Discordで音楽を流せるMusic Bot",
   description:
-    "Discord の中だけで完結する、埋め込み UI 付き音楽 Bot。スラッシュ・プレフィックス対応、キュー永続化、多言語 UI、プレイリスト読込に対応。",
+    "Discord のボイスチャットで音楽を再生できる Music Bot。曲名検索、URL再生、プレイリスト、キュー操作に対応。",
   url: normalizedSiteUrl,
   ogImage: "/ogp-kanade.png",
   githubUrl: "https://github.com/AxAce67/discord-music-bot",
